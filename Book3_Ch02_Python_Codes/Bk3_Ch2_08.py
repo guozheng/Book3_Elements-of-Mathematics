@@ -23,3 +23,9 @@ B = np.array([[1, 2, 3],
 
 # calculate element-wise product of matrices
 A_times_B = A*B
+# Print the results
+print("Element-wise product of row vectors:")
+print(a_times_b)
+
+print("\nElement-wise product of matrices:")
+print(A_times_B)

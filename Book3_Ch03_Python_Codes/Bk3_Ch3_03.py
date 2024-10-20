@@ -1,4 +1,3 @@
-
 ###############
 # Authored by Weisheng Jiang
 # Book 3  |  From Basic Arithmetic to Machine Learning
@@ -19,10 +18,15 @@ pi_upper_b = np.tan(np.pi/n_array)*n_array
 
 fig, ax = plt.subplots()
 
-plt.axhline(y=np.pi, color='r', linestyle='-')
-plt.plot(n_array,pi_lower_b, color = 'b')
-plt.plot(n_array,pi_upper_b, color = 'g')
-plt.fill_between(n_array, pi_lower_b, pi_upper_b, color = '#DEEAF6')
+ax.axhline(y=np.pi, color='r', linestyle='-', label='Actual π')
+ax.plot(n_array, pi_lower_b, color='b', label='Lower bound')
+ax.plot(n_array, pi_upper_b, color='g', label='Upper bound')
+ax.fill_between(n_array, pi_lower_b, pi_upper_b, color='#DEEAF6', alpha=0.5)
+
+ax.set_xlabel('Number of sides, n')
+ax.set_ylabel('Estimate of π')
+ax.set_title('Estimation of π using polygon approximation')
+ax.legend()
+
 plt.tight_layout()
-plt.xlabel('Number of sides, n')
-plt.ylabel('Estimate of $\pi$')
+plt.show()
